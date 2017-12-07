@@ -21,6 +21,7 @@
 		76612E3D1FD95405002D1D8E /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76612E3B1FD95405002D1D8E /* CurrencyTableViewCell.xib */; };
 		76612E3F1FD9575B002D1D8E /* AddToFavouritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76612E3E1FD9575B002D1D8E /* AddToFavouritesButton.swift */; };
 		76612E421FD95C91002D1D8E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76612E411FD95C73002D1D8E /* UIViewControllerExtension.swift */; };
+		76612E451FD95D41002D1D8E /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76612E441FD95D41002D1D8E /* CurrencyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		76612E3B1FD95405002D1D8E /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 		76612E3E1FD9575B002D1D8E /* AddToFavouritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavouritesButton.swift; sourceTree = "<group>"; };
 		76612E411FD95C73002D1D8E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		76612E441FD95D41002D1D8E /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		76612E161FD835D8002D1D8E /* CoinMarket */ = {
 			isa = PBXGroup;
 			children = (
+				76612E431FD95D2D002D1D8E /* Services */,
 				76612E401FD95C52002D1D8E /* Extensions */,
 				76612E341FD94875002D1D8E /* Utils */,
 				76612E301FD9459E002D1D8E /* Models */,
@@ -137,6 +140,14 @@
 				76612E411FD95C73002D1D8E /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76612E431FD95D2D002D1D8E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				76612E441FD95D41002D1D8E /* CurrencyService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				76612E421FD95C91002D1D8E /* UIViewControllerExtension.swift in Sources */,
 				76612E1A1FD835D8002D1D8E /* ViewController.swift in Sources */,
 				76612E201FD835D8002D1D8E /* CoinMarket.xcdatamodeld in Sources */,
+				76612E451FD95D41002D1D8E /* CurrencyService.swift in Sources */,
 				76612E3C1FD95405002D1D8E /* CurrencyTableViewCell.swift in Sources */,
 				76612E181FD835D8002D1D8E /* AppDelegate.swift in Sources */,
 				76612E371FD948FC002D1D8E /* HttpRequester.swift in Sources */,

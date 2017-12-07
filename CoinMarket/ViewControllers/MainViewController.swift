@@ -12,15 +12,22 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var httpRequester: HttpRequester = HttpRequester()
+    var currencyService: CurrencyService = CurrencyService()
+//    var httpRequester: HttpRequester = HttpRequester()
     var currenciesArray: [CurrencyModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configTableView()
-        httpRequester.delegate = self
-        httpRequester.get(from: APIUrl)
+        currencyService.currencyServiceDelegate = self
+//        httpRequester.delegate = self
+//        httpRequester.get(from: APIUrl)
+        requestCurrencies()
+    }
+    
+    func requestCurrencies() {
+        currencyService.requestCurrencies()
     }
     
     // private methods
@@ -57,31 +64,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - HttpRequesterDelegate
-extension MainViewController: HttpRequesterDelegate {
-    func didGetSuccess(with data: Data) {
-        print("Success!!")
-        let decoder = JSONDecoder()
-        do {
-            let response = try decoder.decode([CurrencyModel].self, from: data)
-            if currenciesArray.count == 0 {
-                currenciesArray = response
-            } else {
-                currenciesArray.append(contentsOf: response)
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            print("Response!!!: \(response)")
-        } catch {
-            print("Can't convert data from JSON")
-            print("Error: \(error.localizedDescription)")
+extension MainViewController: CurrencyServiceDelegate {
+    func didRegisterSuccess() {
+        self.currenciesArray = currencyService.resultsArray
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
-    
-    func didGetFailed(with error: String) {
-        print("Error: \(error)")
-        self.showAlert(title: errorTitle, message: "\(error)")
+        
+    func didRegisterFailure(withError: String) {
+        DispatchQueue.main.async {
+            self.showAlert(title: errorTitle, message: withError)
+        }
     }
 }
