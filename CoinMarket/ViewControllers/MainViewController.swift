@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var currencyService: CurrencyService = CurrencyService()
-//    var httpRequester: HttpRequester = HttpRequester()
     var currenciesArray: [CurrencyModel] = []
     
     override func viewDidLoad() {
@@ -21,8 +20,6 @@ class MainViewController: UIViewController {
         
         configTableView()
         currencyService.currencyServiceDelegate = self
-//        httpRequester.delegate = self
-//        httpRequester.get(from: APIUrl)
         requestCurrencies()
     }
     
@@ -42,7 +39,7 @@ class MainViewController: UIViewController {
     }
 }
 
-    // MARK: - UITableViewDelegate, UITableViewDataSource
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -64,6 +61,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+    // MARK: - CurrencyServiceDelegate
 extension MainViewController: CurrencyServiceDelegate {
     func didRegisterSuccess() {
         self.currenciesArray = currencyService.resultsArray

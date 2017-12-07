@@ -13,7 +13,7 @@ enum HttpMethod: String {
 }
 
 class HttpRequester {
-    var delegate : HttpRequesterDelegate?
+    weak var delegate: HttpRequesterDelegate?
     
     func get(from url: String) {
         makeRequest(to: url, with: .get, andBody: nil)
@@ -106,7 +106,7 @@ class HttpRequester {
     }
 }
 
-protocol HttpRequesterDelegate {
+protocol HttpRequesterDelegate: class {
     func didGetSuccess(with data: Data)
     func didGetFailed(with error: String)
 }
