@@ -11,3 +11,6 @@ import Foundation
 
 // API urls
 let APIUrl = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
+
+// alert messages
+let errorTitle = "Error"
