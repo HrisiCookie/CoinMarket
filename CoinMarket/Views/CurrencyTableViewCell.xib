@@ -43,6 +43,9 @@
                             <constraint firstAttribute="height" constant="40" id="7u3-5m-KUH"/>
                             <constraint firstAttribute="width" constant="40" id="W17-Tx-eWm"/>
                         </constraints>
+                        <connections>
+                            <action selector="didPressAddToFavouritesBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sCK-Qo-6nR"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -59,6 +62,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addToFavouritesBtn" destination="juc-1F-JK4" id="lHY-84-RLc"/>
                 <outlet property="nameLabel" destination="6e5-sx-rbd" id="EO0-sb-XzS"/>
                 <outlet property="symbolLabel" destination="XZG-34-3zb" id="c1t-e6-6yn"/>
             </connections>

@@ -14,3 +14,7 @@ let APIUrl = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
 
 // alert messages
 let errorTitle = "Error"
+let addedToFavouritesTitle = "Saved!"
+let addedToFavouritesMessage = "This currency is added to Favourites."
+let removedFromFavouritesTitle = "Removed!"
+let removedFromFavouritesMessage = "This currency is removed from Favourites."

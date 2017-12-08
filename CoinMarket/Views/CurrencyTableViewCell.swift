@@ -8,10 +8,18 @@
 
 import UIKit
 
+protocol CurrencyTableViewCellProtocol: class {
+    func addToFavouritesBtnTapped(isAdded: Bool, atIndex: Int)
+}
+
 class CurrencyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var symbolLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var symbolLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var addToFavouritesBtn: AddToFavouritesButton!
+    
+    weak var delegate: CurrencyTableViewCellProtocol?
+    var indexPath: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +28,9 @@ class CurrencyTableViewCell: UITableViewCell {
     func populate(symbol: String, name: String) {
         symbolLabel.text = symbol
         nameLabel.text = name
+    }
+    
+    @IBAction private func didPressAddToFavouritesBtn(_ sender: Any) {
+        delegate?.addToFavouritesBtnTapped(isAdded: !addToFavouritesBtn.isChecked, atIndex: indexPath)
     }
 }
