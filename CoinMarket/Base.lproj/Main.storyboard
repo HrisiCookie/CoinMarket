@@ -12,18 +12,40 @@
         <!--Favourites-->
         <scene sceneID="hmy-zM-R4N">
             <objects>
-                <viewController id="WBu-hw-axu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavouritesViewController" id="WBu-hw-axu" customClass="FavouritesViewController" customModule="CoinMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bv7-Zc-MX9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There are no favourite currencies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxV-aE-48t">
+                                <rect key="frame" x="51" y="161" width="296" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-6l-3yl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RtJ-6l-3yl" firstAttribute="trailing" secondItem="fEH-oF-99Q" secondAttribute="trailing" id="4T9-3O-pKa"/>
+                            <constraint firstItem="RtJ-6l-3yl" firstAttribute="top" secondItem="Bv7-Zc-MX9" secondAttribute="top" id="cYN-d6-IFR"/>
+                            <constraint firstItem="RtJ-6l-3yl" firstAttribute="bottom" secondItem="fEH-oF-99Q" secondAttribute="bottom" id="eN2-8s-hq1"/>
+                            <constraint firstItem="RtJ-6l-3yl" firstAttribute="leading" secondItem="fEH-oF-99Q" secondAttribute="leading" id="jrP-58-YUh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fEH-oF-99Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favourites" image="addedToFavourites" selectedImage="addedToFavourites" id="RKP-mn-xvM"/>
+                    <connections>
+                        <outlet property="tableView" destination="RtJ-6l-3yl" id="Xm4-Wl-nGO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmm-8D-9qd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="699"/>
+            <point key="canvasLocation" x="-679.20000000000005" y="698.5007496251875"/>
         </scene>
         <!--currencies-->
         <scene sceneID="0Q7-IX-b9m">

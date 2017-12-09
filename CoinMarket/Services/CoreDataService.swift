@@ -16,6 +16,7 @@ class CoreDataService {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         let favouriteCurrency = FavouriteCurrency(context: managedContext)
         
+        favouriteCurrency.id = id
         favouriteCurrency.currency = currency
         favouriteCurrency.symbol = symbol
         favouriteCurrency.priceUsd = priceUsd
@@ -31,14 +32,25 @@ class CoreDataService {
     }
     
     // delete from Core Data
-    func delete(currency: FavouriteCurrency) {
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+    func deleteDataWihtId(withId id: String) {
         
-        managedContext.delete(currency)
+        guard let managedObject = appDelegate?.persistentContainer.viewContext else {
+            return}
+        
+        let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
+        let predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = predicate
+        
+        let result = try? managedObject.fetch(fetchRequest)
+        let resultData = result!
+        
+        for object in resultData {
+            managedObject.delete(object)
+        }
         
         do {
-            try managedContext.save()
-            print("Successfully deleted data!")
+            try managedObject.save()
+            print("Removed from favourites!")
         } catch {
             print("Could not remove: \(error.localizedDescription)")
         }

@@ -89,35 +89,11 @@ extension MainViewController: CurrencyTableViewCellProtocol {
             coreDataService.save(id: currenciesArray[atIndex].id, currency: currenciesArray[atIndex].name, symbol: currenciesArray[atIndex].symbol, priceUsd: currenciesArray[atIndex].price_usd, completion: { (completion) in
                 if completion {
                     self.showAlert(title: addedToFavouritesTitle, message: addedToFavouritesMessage)
-                    print("Added to favourites")
                 }
             })
         } else {
-            deleteDataWihtId(withId: currenciesArray[atIndex].id)
+            coreDataService.deleteDataWihtId(withId: currenciesArray[atIndex].id)
             self.showAlert(title: removedFromFavouritesTitle, message: removedFromFavouritesMessage)
-        }
-    }
-    
-    func deleteDataWihtId(withId id: String) {
-        
-        guard let managedObject = appDelegate?.persistentContainer.viewContext else {return}
-
-        let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
-        let predicate = NSPredicate(format: "id == %@", id)
-        fetchRequest.predicate = predicate
-        
-        guard let result = try? managedObject.fetch(fetchRequest) else {return}
-        let resultData = result
-        
-        for object in resultData {
-            managedObject.delete(object)
-        }
-        
-        do {
-            try managedObject.save()
-            print("Removed from favourites!")
-        } catch {
-            print("Could not remove: \(error.localizedDescription)")
         }
     }
 }
