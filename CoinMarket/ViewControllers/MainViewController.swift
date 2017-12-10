@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     var currencyService: CurrencyService = CurrencyService()
     var currenciesArray: [CurrencyModel] = []
     var coreDataService: CoreDataService = CoreDataService()
+    var isSelected: Bool = false
+    var favIds: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,14 @@ class MainViewController: UIViewController {
         configTableView()
         currencyService.currencyServiceDelegate = self
         requestCurrencies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let savedfavIds = UserDefaults.standard.object(forKey: "favIds") as? [String] ?? favIds
+        print("Saved: \(savedfavIds)")
+        favIds = savedfavIds
     }
     
     func requestCurrencies() {
@@ -61,7 +71,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         currencyCell.delegate = self
         currencyCell.indexPath = indexPath.row
         
-        currencyCell.populate(symbol: symbol, name: name)
+        isSelected = favIds.contains(currenciesArray[indexPath.row].id) ? true : false
+        
+        currencyCell.populate(symbol: symbol, name: name, isAdded: isSelected)
 
         return currencyCell
     }
@@ -88,12 +100,20 @@ extension MainViewController: CurrencyTableViewCellProtocol {
         if isAdded {
             coreDataService.save(id: currenciesArray[atIndex].id, currency: currenciesArray[atIndex].name, symbol: currenciesArray[atIndex].symbol, priceUsd: currenciesArray[atIndex].price_usd, completion: { (completion) in
                 if completion {
+                    self.favIds.append(currenciesArray[atIndex].id)
                     self.showAlert(title: addedToFavouritesTitle, message: addedToFavouritesMessage)
                 }
             })
         } else {
             coreDataService.deleteDataWihtId(withId: currenciesArray[atIndex].id)
+            if let index = favIds.index(of: currenciesArray[atIndex].id) {
+                favIds.remove(at: index)
+            }
             self.showAlert(title: removedFromFavouritesTitle, message: removedFromFavouritesMessage)
         }
+        
+        UserDefaults.standard.set(favIds, forKey: "favIds")
+        print("In UD: \(UserDefaults.standard.object(forKey: "favIds"))")
+        UserDefaults.standard.object(forKey: "favIds") as! [String]
     }
 }
