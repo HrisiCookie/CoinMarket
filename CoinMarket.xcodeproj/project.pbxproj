@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB87274BC45E68D40FA1E2B /* Pods_CoinMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A85DE5EDF9934961A89004 /* Pods_CoinMarket.framework */; };
 		76612E181FD835D8002D1D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76612E171FD835D8002D1D8E /* AppDelegate.swift */; };
 		76612E1A1FD835D8002D1D8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76612E191FD835D8002D1D8E /* ViewController.swift */; };
 		76612E1D1FD835D8002D1D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76612E1B1FD835D8002D1D8E /* Main.storyboard */; };
@@ -26,9 +27,12 @@
 		766F037D1FDB5E9B00C87206 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F037C1FDB5E9B00C87206 /* FavouritesViewController.swift */; };
 		766F03801FDB605900C87206 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F037E1FDB605900C87206 /* FavouritesTableViewCell.swift */; };
 		766F03811FDB605900C87206 /* FavouritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766F037F1FDB605900C87206 /* FavouritesTableViewCell.xib */; };
+		766F03831FDD69F300C87206 /* AddQuantityForCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F03821FDD69F300C87206 /* AddQuantityForCurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D7C544D9F6CDF9354D30D48 /* Pods-CoinMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMarket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinMarket/Pods-CoinMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		75429828DB9653285C8240A7 /* Pods-CoinMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMarket.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinMarket/Pods-CoinMarket.release.xcconfig"; sourceTree = "<group>"; };
 		76612E141FD835D8002D1D8E /* CoinMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76612E171FD835D8002D1D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76612E191FD835D8002D1D8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		766F037C1FDB5E9B00C87206 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		766F037E1FDB605900C87206 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		766F037F1FDB605900C87206 /* FavouritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesTableViewCell.xib; sourceTree = "<group>"; };
+		766F03821FDD69F300C87206 /* AddQuantityForCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuantityForCurrencyViewController.swift; sourceTree = "<group>"; };
+		93A85DE5EDF9934961A89004 /* Pods_CoinMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB87274BC45E68D40FA1E2B /* Pods_CoinMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +75,8 @@
 			children = (
 				76612E161FD835D8002D1D8E /* CoinMarket */,
 				76612E151FD835D8002D1D8E /* Products */,
+				92EE15357FE52FC4A993636C /* Pods */,
+				F082F5AC145126C2E933B853 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +122,7 @@
 			children = (
 				76612E321FD9484B002D1D8E /* MainViewController.swift */,
 				766F037C1FDB5E9B00C87206 /* FavouritesViewController.swift */,
+				766F03821FDD69F300C87206 /* AddQuantityForCurrencyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +172,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		92EE15357FE52FC4A993636C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C544D9F6CDF9354D30D48 /* Pods-CoinMarket.debug.xcconfig */,
+				75429828DB9653285C8240A7 /* Pods-CoinMarket.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F082F5AC145126C2E933B853 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93A85DE5EDF9934961A89004 /* Pods_CoinMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76612E291FD835D8002D1D8E /* Build configuration list for PBXNativeTarget "CoinMarket" */;
 			buildPhases = (
+				C26B8551F57499F5EBFF705B /* [CP] Check Pods Manifest.lock */,
 				76612E101FD835D8002D1D8E /* Sources */,
 				76612E111FD835D8002D1D8E /* Frameworks */,
 				76612E121FD835D8002D1D8E /* Resources */,
+				B0342C4B2F942B4F4EB23C1A /* [CP] Embed Pods Frameworks */,
+				DC189A1B0A6E33EE97572125 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +261,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B0342C4B2F942B4F4EB23C1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C26B8551F57499F5EBFF705B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC189A1B0A6E33EE97572125 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		76612E101FD835D8002D1D8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -239,6 +323,7 @@
 				76612E391FD94A72002D1D8E /* CurrencyModel.swift in Sources */,
 				76612E361FD94891002D1D8E /* Constants.swift in Sources */,
 				76612E421FD95C91002D1D8E /* UIViewControllerExtension.swift in Sources */,
+				766F03831FDD69F300C87206 /* AddQuantityForCurrencyViewController.swift in Sources */,
 				76612E1A1FD835D8002D1D8E /* ViewController.swift in Sources */,
 				766F037D1FDB5E9B00C87206 /* FavouritesViewController.swift in Sources */,
 				766F037B1FDB2F6300C87206 /* CoreDataService.swift in Sources */,
@@ -384,6 +469,7 @@
 		};
 		76612E2A1FD835D8002D1D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D7C544D9F6CDF9354D30D48 /* Pods-CoinMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -399,6 +485,7 @@
 		};
 		76612E2B1FD835D8002D1D8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75429828DB9653285C8240A7 /* Pods-CoinMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

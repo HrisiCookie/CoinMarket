@@ -4,10 +4,11 @@
         <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isAddedToFavourites" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="priceBtc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceUsd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FavouriteCurrency" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="FavouriteCurrency" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

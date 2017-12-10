@@ -8,13 +8,16 @@
 
 import UIKit
 import CoreData
+import Presentr
 
 class FavouritesViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
     var favourites: [FavouriteCurrency] = []
-    
+    var currentFav: FavouriteCurrency?
+    let presenter = Presentr(presentationType: .topHalf)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +47,13 @@ class FavouritesViewController: UIViewController {
                 tableView.isHidden = favourites.count < 1 ? true : false
             }
         }
+    }
+    
+    @objc func showNextVCForCurrentRow() {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "\(AddQuantityForCurrencyViewController.self)") as? AddQuantityForCurrencyViewController else {return}
+        controller.selectedCurrency = currentFav
+        customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
     }
     
     func fetch(completion: (_ complete: Bool) -> ()) {
@@ -78,9 +88,12 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let symbol = favourites[indexPath.row].symbol,
             let name = favourites[indexPath.row].currency {
+            currentFav = favourites[indexPath.row]
+            favouritesCell.updateBtn.addTarget(self, action: #selector(showNextVCForCurrentRow), for: .touchUpInside)
             favouritesCell.populate(symbol: symbol, name: name)
         }
         
         return favouritesCell
     }
 }
+

@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		095894EB84C080905EA2B0B6EA675276 /* ModalCenterPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D6F166FF626EBC4BF3DD3782F74AB /* ModalCenterPosition.swift */; };
+		0F6B7FEB793C9DF5E5FA82DBFF8153E5 /* CrossDissolveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C92DA984B4038383A8BE44523987C9A /* CrossDissolveAnimation.swift */; };
+		144FADF87C42E9991E06AAE53C8FF101 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613E35DC23FCEC2AF7EF362A15ADF935 /* AlertViewController.xib */; };
+		1563E0791052D8D8A25FBB82DFF1E7B5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48651EB3A158853D03E00AE31EC6E3C5 /* Montserrat-Regular.ttf */; };
+		1891E178FF53808A8E30628C3F0FED25 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4E27BB220F794210FC831B309C46613 /* SourceSansPro-Regular.ttf */; };
+		1B15705FE32F9EBB80E74E337F5C75FA /* ModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C4F0F2FFEDE896F39C1615ADF1FA2 /* ModalSize.swift */; };
+		232063CF697AA0324435C37A603BAC79 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3C6585919E7BE5CD099B21D7CA5AE /* TransitionType.swift */; };
+		2C955D9F504E84FF34C25D1A3978AE42 /* Presentr+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5654D1CD696EDC6864A75402C0738097 /* Presentr+Equatable.swift */; };
+		2DF96612AA1C91190F2A0475EAB81656 /* PresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA7848EA1005BF00F5993A3235F7C7 /* PresentationType.swift */; };
+		3543B2D129986C5A2E585AE1FF82171F /* PresentrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C122824562D55D79D3D468A3793BEC42 /* PresentrController.swift */; };
+		3A1245D910369F73DA051B94919CB7C5 /* CoverHorizontalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4688EACA3F5B97C994663C13940C /* CoverHorizontalAnimation.swift */; };
+		3A5BD599DC3703E217C1EAF5DA394DD8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFFCE4BE63C5517EF77C1188108C34 /* AlertViewController.swift */; };
+		3C1FC2ECC80AF5EE3303A95E785AD26A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4081F4154D102626B9E8DF9A5AC6F932 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7E4F8959D1075AAA2C1E81D856A4E5 /* BackgroundView.swift */; };
+		431D7954A7DC70AEE5A9BD3E60D9F438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7BDF1DF6454F797496912B9B5FFC923D /* PresentrShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5798866EC6CA04A28432F9747A3CFA /* PresentrShadow.swift */; };
+		8E8E0AC9DD05FAD71852BB89C1FF70A3 /* CoverVerticalAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A296BD2D11C92012C5D4A74C5664D8 /* CoverVerticalAnimation.swift */; };
+		9E1A06395F11849D7A552394EF58D4A9 /* PresentrAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB1368281EAC13CA28768C5DC2578 /* PresentrAnimation.swift */; };
+		A287FD7C5F82AB7D41FD298E0328A19C /* Presentr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E480DA6003FC1C03A9763EFE4EA9485 /* Presentr.swift */; };
+		AF926099D38118DC3F76ADF37D8EC4DB /* CoverVerticalFromTopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E04F8EFF080552034B87C7A75A662C /* CoverVerticalFromTopAnimation.swift */; };
+		C02A87839D74203700C3824560AAB94B /* Pods-CoinMarket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9444409BE2423254E9B56EAD26E985A /* Pods-CoinMarket-dummy.m */; };
+		C47FA6EE2D34B3BE589EF79E30A8CF26 /* Presentr-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B1AEABC61C86910D87345E287CA62 /* Presentr-dummy.m */; };
+		D9B3BDCA158CBA4B7109BB1080C60DE0 /* Presentr-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77E3317251E9BE76FE36624B93099 /* Presentr-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA2589ED27DFCF4D79C75240EF79E3CD /* Pods-CoinMarket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5ACBB436FC59A6E403A4C264B932938 /* Pods-CoinMarket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6246C67C384FC1B0FB06A3D22E52AAC /* KeyboardTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B1F645B874A8C69C5B5120DA93930 /* KeyboardTranslation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7089643D0AD0A11EC7A476CA2796CF3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D85AFBF811022C93BA5ABA7323273B1;
+			remoteInfo = Presentr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02DC4688EACA3F5B97C994663C13940C /* CoverHorizontalAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverHorizontalAnimation.swift; path = Presentr/CoverHorizontalAnimation.swift; sourceTree = "<group>"; };
+		0E480DA6003FC1C03A9763EFE4EA9485 /* Presentr.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Presentr.swift; path = Presentr/Presentr.swift; sourceTree = "<group>"; };
+		1928F3511A71B5A97F828B7C5483D8EC /* Pods-CoinMarket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CoinMarket.modulemap"; sourceTree = "<group>"; };
+		1C92DA984B4038383A8BE44523987C9A /* CrossDissolveAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrossDissolveAnimation.swift; path = Presentr/CrossDissolveAnimation.swift; sourceTree = "<group>"; };
+		2FF5E26136D0C518F772C99860043270 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AAA7848EA1005BF00F5993A3235F7C7 /* PresentationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentationType.swift; path = Presentr/PresentationType.swift; sourceTree = "<group>"; };
+		3FE77E3317251E9BE76FE36624B93099 /* Presentr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Presentr-umbrella.h"; sourceTree = "<group>"; };
+		460E4B657741BA34B68EED4BB3CB8D00 /* Pods-CoinMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		48651EB3A158853D03E00AE31EC6E3C5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Montserrat-Regular.ttf"; path = "Presentr/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		4A2936C7B6CEFBB5DB4872C005A1AA2D /* Presentr.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Presentr.xcconfig; sourceTree = "<group>"; };
+		528B1F645B874A8C69C5B5120DA93930 /* KeyboardTranslation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardTranslation.swift; path = Presentr/KeyboardTranslation.swift; sourceTree = "<group>"; };
+		5654D1CD696EDC6864A75402C0738097 /* Presentr+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Presentr+Equatable.swift"; path = "Presentr/Presentr+Equatable.swift"; sourceTree = "<group>"; };
+		5B71825019A2841FDD4CD5C6120ABBB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		613E35DC23FCEC2AF7EF362A15ADF935 /* AlertViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AlertViewController.xib; path = Presentr/AlertViewController.xib; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6A3D6F166FF626EBC4BF3DD3782F74AB /* ModalCenterPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalCenterPosition.swift; path = Presentr/ModalCenterPosition.swift; sourceTree = "<group>"; };
+		795B1AEABC61C86910D87345E287CA62 /* Presentr-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Presentr-dummy.m"; sourceTree = "<group>"; };
+		8215B285DAB2C02558DA8F27E2574D3F /* Pods-CoinMarket-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoinMarket-resources.sh"; sourceTree = "<group>"; };
+		86915352F5B7A19B038A9A870F63DD1C /* Pods-CoinMarket-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoinMarket-frameworks.sh"; sourceTree = "<group>"; };
+		8D433E50961B49B403568CBA55BAC4B2 /* Presentr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Presentr.framework; path = Presentr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A46E2D0112B0CFADC98C572B017730 /* Pods-CoinMarket-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoinMarket-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A49F59307768FF4CB4DDD05B1702ABD1 /* Presentr-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Presentr-prefix.pch"; sourceTree = "<group>"; };
+		A9F3C6585919E7BE5CD099B21D7CA5AE /* TransitionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionType.swift; path = Presentr/TransitionType.swift; sourceTree = "<group>"; };
+		AA963B0CF6D24AD87E354ECC709A49C3 /* Pods-CoinMarket-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoinMarket-acknowledgements.plist"; sourceTree = "<group>"; };
+		ADC87F88D7250E515288621202141F87 /* Pods-CoinMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinMarket.release.xcconfig"; sourceTree = "<group>"; };
+		B3E04F8EFF080552034B87C7A75A662C /* CoverVerticalFromTopAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverVerticalFromTopAnimation.swift; path = Presentr/CoverVerticalFromTopAnimation.swift; sourceTree = "<group>"; };
+		BD4C4F0F2FFEDE896F39C1615ADF1FA2 /* ModalSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalSize.swift; path = Presentr/ModalSize.swift; sourceTree = "<group>"; };
+		BE5798866EC6CA04A28432F9747A3CFA /* PresentrShadow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentrShadow.swift; path = Presentr/PresentrShadow.swift; sourceTree = "<group>"; };
+		C0A296BD2D11C92012C5D4A74C5664D8 /* CoverVerticalAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverVerticalAnimation.swift; path = Presentr/CoverVerticalAnimation.swift; sourceTree = "<group>"; };
+		C122824562D55D79D3D468A3793BEC42 /* PresentrController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentrController.swift; path = Presentr/PresentrController.swift; sourceTree = "<group>"; };
+		C4E27BB220F794210FC831B309C46613 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "SourceSansPro-Regular.ttf"; path = "Presentr/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		C5AFADDBD1603D06ECE0CBE39D54115F /* Presentr.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Presentr.modulemap; sourceTree = "<group>"; };
+		E5ACBB436FC59A6E403A4C264B932938 /* Pods-CoinMarket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoinMarket-umbrella.h"; sourceTree = "<group>"; };
+		F1CFFCE4BE63C5517EF77C1188108C34 /* AlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertViewController.swift; path = Presentr/AlertViewController.swift; sourceTree = "<group>"; };
+		F3F556F6B519714494478D9EB5BD01A6 /* Pods_CoinMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CoinMarket.framework; path = "Pods-CoinMarket.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9444409BE2423254E9B56EAD26E985A /* Pods-CoinMarket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoinMarket-dummy.m"; sourceTree = "<group>"; };
+		FF6FB1368281EAC13CA28768C5DC2578 /* PresentrAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentrAnimation.swift; path = Presentr/PresentrAnimation.swift; sourceTree = "<group>"; };
+		FF7E4F8959D1075AAA2C1E81D856A4E5 /* BackgroundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Presentr/BackgroundView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2252747298440F86C0874CA7EABC2D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431D7954A7DC70AEE5A9BD3E60D9F438 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A634DB1871A73D8681CA415EE72AFEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C1FC2ECC80AF5EE3303A95E785AD26A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10FD0FEE20527FF3B901CA4C4ABA6620 /* Pods-CoinMarket */ = {
+			isa = PBXGroup;
+			children = (
+				2FF5E26136D0C518F772C99860043270 /* Info.plist */,
+				1928F3511A71B5A97F828B7C5483D8EC /* Pods-CoinMarket.modulemap */,
+				92A46E2D0112B0CFADC98C572B017730 /* Pods-CoinMarket-acknowledgements.markdown */,
+				AA963B0CF6D24AD87E354ECC709A49C3 /* Pods-CoinMarket-acknowledgements.plist */,
+				F9444409BE2423254E9B56EAD26E985A /* Pods-CoinMarket-dummy.m */,
+				86915352F5B7A19B038A9A870F63DD1C /* Pods-CoinMarket-frameworks.sh */,
+				8215B285DAB2C02558DA8F27E2574D3F /* Pods-CoinMarket-resources.sh */,
+				E5ACBB436FC59A6E403A4C264B932938 /* Pods-CoinMarket-umbrella.h */,
+				460E4B657741BA34B68EED4BB3CB8D00 /* Pods-CoinMarket.debug.xcconfig */,
+				ADC87F88D7250E515288621202141F87 /* Pods-CoinMarket.release.xcconfig */,
+			);
+			name = "Pods-CoinMarket";
+			path = "Target Support Files/Pods-CoinMarket";
+			sourceTree = "<group>";
+		};
+		11F5BBA1F62AAB9C33DCF2A65138B45A /* Presentr */ = {
+			isa = PBXGroup;
+			children = (
+				F1CFFCE4BE63C5517EF77C1188108C34 /* AlertViewController.swift */,
+				FF7E4F8959D1075AAA2C1E81D856A4E5 /* BackgroundView.swift */,
+				02DC4688EACA3F5B97C994663C13940C /* CoverHorizontalAnimation.swift */,
+				C0A296BD2D11C92012C5D4A74C5664D8 /* CoverVerticalAnimation.swift */,
+				B3E04F8EFF080552034B87C7A75A662C /* CoverVerticalFromTopAnimation.swift */,
+				1C92DA984B4038383A8BE44523987C9A /* CrossDissolveAnimation.swift */,
+				528B1F645B874A8C69C5B5120DA93930 /* KeyboardTranslation.swift */,
+				6A3D6F166FF626EBC4BF3DD3782F74AB /* ModalCenterPosition.swift */,
+				BD4C4F0F2FFEDE896F39C1615ADF1FA2 /* ModalSize.swift */,
+				3AAA7848EA1005BF00F5993A3235F7C7 /* PresentationType.swift */,
+				0E480DA6003FC1C03A9763EFE4EA9485 /* Presentr.swift */,
+				5654D1CD696EDC6864A75402C0738097 /* Presentr+Equatable.swift */,
+				FF6FB1368281EAC13CA28768C5DC2578 /* PresentrAnimation.swift */,
+				C122824562D55D79D3D468A3793BEC42 /* PresentrController.swift */,
+				BE5798866EC6CA04A28432F9747A3CFA /* PresentrShadow.swift */,
+				A9F3C6585919E7BE5CD099B21D7CA5AE /* TransitionType.swift */,
+				2808D961584C6D400524B745C3E4A65B /* Resources */,
+				33EFF84C8428A8C5ACD0C3C3130B44FF /* Support Files */,
+			);
+			name = Presentr;
+			path = Presentr;
+			sourceTree = "<group>";
+		};
+		2808D961584C6D400524B745C3E4A65B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				613E35DC23FCEC2AF7EF362A15ADF935 /* AlertViewController.xib */,
+				48651EB3A158853D03E00AE31EC6E3C5 /* Montserrat-Regular.ttf */,
+				C4E27BB220F794210FC831B309C46613 /* SourceSansPro-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		33EFF84C8428A8C5ACD0C3C3130B44FF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B71825019A2841FDD4CD5C6120ABBB4 /* Info.plist */,
+				C5AFADDBD1603D06ECE0CBE39D54115F /* Presentr.modulemap */,
+				4A2936C7B6CEFBB5DB4872C005A1AA2D /* Presentr.xcconfig */,
+				795B1AEABC61C86910D87345E287CA62 /* Presentr-dummy.m */,
+				A49F59307768FF4CB4DDD05B1702ABD1 /* Presentr-prefix.pch */,
+				3FE77E3317251E9BE76FE36624B93099 /* Presentr-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Presentr";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8CA2E3D736D9A21A1A7C1B27C3F12C44 /* Pods */,
+				A977E538D7289846844AD451C3106DE2 /* Products */,
+				99BCF9F7A229F470357A67464E5413A5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8CA2E3D736D9A21A1A7C1B27C3F12C44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11F5BBA1F62AAB9C33DCF2A65138B45A /* Presentr */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99BCF9F7A229F470357A67464E5413A5 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10FD0FEE20527FF3B901CA4C4ABA6620 /* Pods-CoinMarket */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A977E538D7289846844AD451C3106DE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3F556F6B519714494478D9EB5BD01A6 /* Pods_CoinMarket.framework */,
+				8D433E50961B49B403568CBA55BAC4B2 /* Presentr.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		571CB2291E7C4F09FE221A156976BAE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA2589ED27DFCF4D79C75240EF79E3CD /* Pods-CoinMarket-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5483EB22E5F836D675CA082BFADF402 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B3BDCA158CBA4B7109BB1080C60DE0 /* Presentr-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1D85AFBF811022C93BA5ABA7323273B1 /* Presentr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 255E1368BF59DB3EEADFED0E3471F4B3 /* Build configuration list for PBXNativeTarget "Presentr" */;
+			buildPhases = (
+				4482E0C19A9F8FAA0CBB1EC33EF8DB6C /* Sources */,
+				7A634DB1871A73D8681CA415EE72AFEF /* Frameworks */,
+				FF89293A4550F8AA138E7302369F8DCD /* Resources */,
+				C5483EB22E5F836D675CA082BFADF402 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Presentr;
+			productName = Presentr;
+			productReference = 8D433E50961B49B403568CBA55BAC4B2 /* Presentr.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C4C0016D28BCE128C3F1E55A3A7298EE /* Pods-CoinMarket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CB0165389EA2D7BCA4F7FAABFEE49C7 /* Build configuration list for PBXNativeTarget "Pods-CoinMarket" */;
+			buildPhases = (
+				AD5770D5ACF5776188025F8A9ABAE08B /* Sources */,
+				2252747298440F86C0874CA7EABC2D9C /* Frameworks */,
+				571CB2291E7C4F09FE221A156976BAE2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAB9003C3478D381ED81D53167E810F7 /* PBXTargetDependency */,
+			);
+			name = "Pods-CoinMarket";
+			productName = "Pods-CoinMarket";
+			productReference = F3F556F6B519714494478D9EB5BD01A6 /* Pods_CoinMarket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A977E538D7289846844AD451C3106DE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4C0016D28BCE128C3F1E55A3A7298EE /* Pods-CoinMarket */,
+				1D85AFBF811022C93BA5ABA7323273B1 /* Presentr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF89293A4550F8AA138E7302369F8DCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144FADF87C42E9991E06AAE53C8FF101 /* AlertViewController.xib in Resources */,
+				1563E0791052D8D8A25FBB82DFF1E7B5 /* Montserrat-Regular.ttf in Resources */,
+				1891E178FF53808A8E30628C3F0FED25 /* SourceSansPro-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4482E0C19A9F8FAA0CBB1EC33EF8DB6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A5BD599DC3703E217C1EAF5DA394DD8 /* AlertViewController.swift in Sources */,
+				4081F4154D102626B9E8DF9A5AC6F932 /* BackgroundView.swift in Sources */,
+				3A1245D910369F73DA051B94919CB7C5 /* CoverHorizontalAnimation.swift in Sources */,
+				8E8E0AC9DD05FAD71852BB89C1FF70A3 /* CoverVerticalAnimation.swift in Sources */,
+				AF926099D38118DC3F76ADF37D8EC4DB /* CoverVerticalFromTopAnimation.swift in Sources */,
+				0F6B7FEB793C9DF5E5FA82DBFF8153E5 /* CrossDissolveAnimation.swift in Sources */,
+				F6246C67C384FC1B0FB06A3D22E52AAC /* KeyboardTranslation.swift in Sources */,
+				095894EB84C080905EA2B0B6EA675276 /* ModalCenterPosition.swift in Sources */,
+				1B15705FE32F9EBB80E74E337F5C75FA /* ModalSize.swift in Sources */,
+				2DF96612AA1C91190F2A0475EAB81656 /* PresentationType.swift in Sources */,
+				2C955D9F504E84FF34C25D1A3978AE42 /* Presentr+Equatable.swift in Sources */,
+				C47FA6EE2D34B3BE589EF79E30A8CF26 /* Presentr-dummy.m in Sources */,
+				A287FD7C5F82AB7D41FD298E0328A19C /* Presentr.swift in Sources */,
+				9E1A06395F11849D7A552394EF58D4A9 /* PresentrAnimation.swift in Sources */,
+				3543B2D129986C5A2E585AE1FF82171F /* PresentrController.swift in Sources */,
+				7BDF1DF6454F797496912B9B5FFC923D /* PresentrShadow.swift in Sources */,
+				232063CF697AA0324435C37A603BAC79 /* TransitionType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5770D5ACF5776188025F8A9ABAE08B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C02A87839D74203700C3824560AAB94B /* Pods-CoinMarket-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAB9003C3478D381ED81D53167E810F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Presentr;
+			target = 1D85AFBF811022C93BA5ABA7323273B1 /* Presentr */;
+			targetProxy = 7089643D0AD0A11EC7A476CA2796CF3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		627D484FF83F6CE9CB694448AEC0873C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 460E4B657741BA34B68EED4BB3CB8D00 /* Pods-CoinMarket.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinMarket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinMarket/Pods-CoinMarket.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoinMarket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67391F5499B15B7BE121A5D3B286E46F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADC87F88D7250E515288621202141F87 /* Pods-CoinMarket.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinMarket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinMarket/Pods-CoinMarket.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoinMarket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A2BA612961B9DD1FC02D15B5ADA47E6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2936C7B6CEFBB5DB4872C005A1AA2D /* Presentr.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Presentr/Presentr-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Presentr/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Presentr/Presentr.modulemap";
+				PRODUCT_NAME = Presentr;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D6130D97C95F082D708B4C39D43732BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2936C7B6CEFBB5DB4872C005A1AA2D /* Presentr.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Presentr/Presentr-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Presentr/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Presentr/Presentr.modulemap";
+				PRODUCT_NAME = Presentr;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		255E1368BF59DB3EEADFED0E3471F4B3 /* Build configuration list for PBXNativeTarget "Presentr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2BA612961B9DD1FC02D15B5ADA47E6B /* Debug */,
+				D6130D97C95F082D708B4C39D43732BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
+				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CB0165389EA2D7BCA4F7FAABFEE49C7 /* Build configuration list for PBXNativeTarget "Pods-CoinMarket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				627D484FF83F6CE9CB694448AEC0873C /* Debug */,
+				67391F5499B15B7BE121A5D3B286E46F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

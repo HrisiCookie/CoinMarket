@@ -98,7 +98,7 @@ extension MainViewController: CurrencyServiceDelegate {
 extension MainViewController: CurrencyTableViewCellProtocol {
     func addToFavouritesBtnTapped(isAdded: Bool, atIndex: Int) {
         if isAdded {
-            coreDataService.save(id: currenciesArray[atIndex].id, currency: currenciesArray[atIndex].name, symbol: currenciesArray[atIndex].symbol, priceUsd: currenciesArray[atIndex].price_usd, completion: { (completion) in
+            coreDataService.save(id: currenciesArray[atIndex].id, currency: currenciesArray[atIndex].name, symbol: currenciesArray[atIndex].symbol, priceUsd: currenciesArray[atIndex].price_usd, priceBtc: currenciesArray[atIndex].price_btc, completion: { (completion) in
                 if completion {
                     self.favIds.append(currenciesArray[atIndex].id)
                     self.showAlert(title: addedToFavouritesTitle, message: addedToFavouritesMessage)

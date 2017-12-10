@@ -12,7 +12,7 @@ import CoreData
 class CoreDataService {
     
     // save to Core Data
-    func save(id: String, currency: String, symbol: String, priceUsd: String, completion: (_ finished: Bool) -> ()) {
+    func save(id: String, currency: String, symbol: String, priceUsd: String, priceBtc: String, completion: (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         let favouriteCurrency = FavouriteCurrency(context: managedContext)
         
@@ -20,6 +20,7 @@ class CoreDataService {
         favouriteCurrency.currency = currency
         favouriteCurrency.symbol = symbol
         favouriteCurrency.priceUsd = priceUsd
+        favouriteCurrency.priceBtc = priceBtc
         
         do {
             try managedContext.save()

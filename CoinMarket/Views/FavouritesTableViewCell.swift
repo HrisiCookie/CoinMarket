@@ -12,6 +12,9 @@ class FavouritesTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var symbolLabel: UILabel!
     @IBOutlet private weak var currencyNameLabel: UILabel!
+    @IBOutlet weak var currencyInUSD: UILabel!
+    @IBOutlet weak var currencyInBTC: UILabel!
+    @IBOutlet weak var updateBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +22,7 @@ class FavouritesTableViewCell: UITableViewCell {
     }
     
     func populate(symbol: String, name: String) {
-        symbolLabel.text = symbol
+        symbolLabel.text = symbol.uppercased()
         currencyNameLabel.text = name
     }
 }
