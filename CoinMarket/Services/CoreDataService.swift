@@ -21,6 +21,7 @@ class CoreDataService {
         favouriteCurrency.symbol = symbol
         favouriteCurrency.priceUsd = priceUsd
         favouriteCurrency.priceBtc = priceBtc
+        favouriteCurrency.result = 0.0
         
         do {
             try managedContext.save()
@@ -54,6 +55,21 @@ class CoreDataService {
             print("Removed from favourites!")
         } catch {
             print("Could not remove: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveChanges(currency: FavouriteCurrency, result: Double, completion: (_ finished: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        currency.result = result
+        
+        do {
+            try managedContext.save()
+            print("Successfully updated data!")
+            completion(true)
+        } catch {
+            print("Could not update: \(error.localizedDescription)")
+            completion(false)
         }
     }
 }

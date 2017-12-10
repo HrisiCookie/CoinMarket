@@ -14,15 +14,14 @@ class FavouritesTableViewCell: UITableViewCell {
     @IBOutlet private weak var currencyNameLabel: UILabel!
     @IBOutlet weak var currencyInUSD: UILabel!
     @IBOutlet weak var currencyInBTC: UILabel!
-    @IBOutlet weak var updateBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func populate(symbol: String, name: String) {
+    func populate(symbol: String, name: String, result: Double) {
         symbolLabel.text = symbol.uppercased()
         currencyNameLabel.text = name
+        currencyInUSD.text = "\(result)"
     }
 }

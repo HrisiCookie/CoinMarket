@@ -13,6 +13,7 @@ var appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class MainViewController: UIViewController {
     
+    // outlets
     @IBOutlet private weak var tableView: UITableView!
     
     var currencyService: CurrencyService = CurrencyService()
@@ -32,9 +33,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let savedfavIds = UserDefaults.standard.object(forKey: "favIds") as? [String] ?? favIds
-        print("Saved: \(savedfavIds)")
-        favIds = savedfavIds
+        favIds = UserDefaults.standard.array(forKey: "favIds") as? [String] ?? [String]()
     }
     
     func requestCurrencies() {
@@ -94,7 +93,8 @@ extension MainViewController: CurrencyServiceDelegate {
         }
     }
 }
-    
+
+// MARK: - CurrencyTableViewCellProtocol
 extension MainViewController: CurrencyTableViewCellProtocol {
     func addToFavouritesBtnTapped(isAdded: Bool, atIndex: Int) {
         if isAdded {
@@ -113,7 +113,5 @@ extension MainViewController: CurrencyTableViewCellProtocol {
         }
         
         UserDefaults.standard.set(favIds, forKey: "favIds")
-        print("In UD: \(UserDefaults.standard.object(forKey: "favIds"))")
-        UserDefaults.standard.object(forKey: "favIds") as! [String]
     }
 }

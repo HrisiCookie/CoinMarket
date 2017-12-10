@@ -6,9 +6,10 @@
         <attribute name="isAddedToFavourites" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="priceBtc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceUsd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FavouriteCurrency" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="FavouriteCurrency" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -9,15 +9,17 @@
 import UIKit
 
 class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var quantityForUSD: UITextField!
-    @IBOutlet weak var momentPriceForUSD: UILabel!
-    @IBOutlet weak var resultForUSD: UILabel!
+    
+    // outlets
+    @IBOutlet private weak var quantityForUSD: UITextField!
+    @IBOutlet private weak var momentPriceForUSD: UILabel!
+    @IBOutlet private weak var resultForUSD: UILabel!
     
     var selectedCurrency: FavouriteCurrency?
     var result: Double = 0
+    private let coreDataService: CoreDataService = CoreDataService()
     
-    var calculatedResult: Double {
+    private var calculatedResult: Double {
         get {
             return result
         } set(value) {
@@ -36,11 +38,8 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
         resultForUSD.text = "\(calculatedResult)"
     }
     
-    @IBAction func textFieldDidChange(_ sender: Any) {
-        calculateResult()
-    }
-    
-    func calculateResult() {
+    // private methods
+    private func calculateResult() {
         if let quantity = quantityForUSD.text,
             let price = momentPriceForUSD.text,
             let doubleQuantity = Double(quantity),
@@ -50,7 +49,21 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
         }
     }
     
-    @IBAction func didPressSubmitBtn(_ sender: Any) {
+    // actions
+    @IBAction func textFieldDidChange(_ sender: Any) {
+        calculateResult()
     }
     
+    @IBAction func didPressSubmitBtn(_ sender: Any) {
+        guard let currency = selectedCurrency else {return}
+        coreDataService.saveChanges(currency: currency, result: calculatedResult) { (completed) in
+            if completed {
+                navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    @IBAction func didPressCancelBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }

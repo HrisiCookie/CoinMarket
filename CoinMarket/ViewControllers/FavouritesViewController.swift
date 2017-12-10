@@ -8,15 +8,14 @@
 
 import UIKit
 import CoreData
-import Presentr
 
 class FavouritesViewController: UIViewController {
 
+    // outlets
     @IBOutlet private weak var tableView: UITableView!
     
     var favourites: [FavouriteCurrency] = []
     var currentFav: FavouriteCurrency?
-    let presenter = Presentr(presentationType: .topHalf)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +30,7 @@ class FavouritesViewController: UIViewController {
         tableView.reloadData()
     }
     
+    // private methods
     private func configTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -48,14 +48,7 @@ class FavouritesViewController: UIViewController {
             }
         }
     }
-    
-    @objc func showNextVCForCurrentRow() {
-        guard let controller = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "\(AddQuantityForCurrencyViewController.self)") as? AddQuantityForCurrencyViewController else {return}
-        controller.selectedCurrency = currentFav
-        customPresentViewController(presenter, viewController: controller, animated: true, completion: nil)
-    }
-    
+
     func fetch(completion: (_ complete: Bool) -> ()) {
         // fetch request - grab data from persistant storage
         
@@ -65,6 +58,7 @@ class FavouritesViewController: UIViewController {
         let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
         do {
             favourites = try managedContext.fetch(fetchRequest)
+            print("Fav: \(favourites)")
             print("Successfully fatched data!")
             completion(true)
         } catch {
@@ -74,6 +68,7 @@ class FavouritesViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -89,11 +84,17 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         if let symbol = favourites[indexPath.row].symbol,
             let name = favourites[indexPath.row].currency {
             currentFav = favourites[indexPath.row]
-            favouritesCell.updateBtn.addTarget(self, action: #selector(showNextVCForCurrentRow), for: .touchUpInside)
-            favouritesCell.populate(symbol: symbol, name: name)
+            let result = favourites[indexPath.row].result
+            favouritesCell.populate(symbol: symbol, name: name, result: result)
         }
         
         return favouritesCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "\(AddQuantityForCurrencyViewController.self)") as? AddQuantityForCurrencyViewController else {return}
+        controller.selectedCurrency = favourites[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
-
