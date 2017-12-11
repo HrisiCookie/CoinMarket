@@ -19,21 +19,49 @@ class MainViewController: UIViewController {
     var currencyService: CurrencyService = CurrencyService()
     var currenciesArray: [CurrencyModel] = []
     var coreDataService: CoreDataService = CoreDataService()
-    var isSelected: Bool = false
-    var favIds: [String] = []
+    var savedResponse: [FavouriteCurrency] = []
+    var isDataLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configTableView()
         currencyService.currencyServiceDelegate = self
-        requestCurrencies()
+        
+        isDataLoaded = UserDefaults.standard.bool(forKey: "isDataLoaded")
+        
+        if !isDataLoaded {
+            requestCurrencies()
+            isDataLoaded = true
+            UserDefaults.standard.set(isDataLoaded, forKey: "isDataLoaded")
+        }
+        
+        fetchCoreDataObjects()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    private func fetchCoreDataObjects() {
+        self.fetch { (complete) in
+            if complete {
+                tableView.isHidden = savedResponse.count < 1 ? true : false
+            }
+        }
+    }
+    
+    func fetch(completion: (_ complete: Bool) -> ()) {
+        // fetch request - grab data from persistant storage
         
-        favIds = UserDefaults.standard.array(forKey: "favIds") as? [String] ?? [String]()
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        // fetch items that are in this entity
+        let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
+        do {
+            savedResponse = try managedContext.fetch(fetchRequest)
+            print("Successfully fatched data!")
+            completion(true)
+        } catch {
+            print("Could not fetch: \(error.localizedDescription)")
+            completion(false)
+        }
     }
     
     func requestCurrencies() {
@@ -60,20 +88,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currenciesArray.count
+        return savedResponse.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let currencyCell = tableView.dequeueReusableCell(withIdentifier: "\(CurrencyTableViewCell.self)", for: indexPath) as? CurrencyTableViewCell else {return UITableViewCell()}
         
-        let symbol = currenciesArray[indexPath.row].symbol.uppercased()
-        let name = currenciesArray[indexPath.row].name
+        let symbol = savedResponse[indexPath.row].symbol?.uppercased()
+        let name = savedResponse[indexPath.row].currency
+        let isAdded = savedResponse[indexPath.row].isAddedToFavourites
         currencyCell.delegate = self
         currencyCell.indexPath = indexPath.row
         
-        isSelected = favIds.contains(currenciesArray[indexPath.row].id) ? true : false
-        
-        currencyCell.populate(symbol: symbol, name: name, isAdded: isSelected)
+        currencyCell.populate(symbol: symbol!, name: name!, isAdded: isAdded)
 
         return currencyCell
     }
@@ -83,7 +110,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: CurrencyServiceDelegate {
     func didRegisterSuccess() {
         self.currenciesArray = currencyService.resultsArray
+        
         DispatchQueue.main.async {
+            for currency in self.currenciesArray {
+                self.coreDataService.save(id: currency.id, currency: currency.name, symbol: currency.symbol, priceUsd: currency.price_usd, priceBtc: currency.price_btc, isAdded: false, completion: { (_) in
+                    
+                })
+            }
+            
+            self.fetchCoreDataObjects()
             self.tableView.reloadData()
         }
     }
@@ -99,20 +134,13 @@ extension MainViewController: CurrencyServiceDelegate {
 extension MainViewController: CurrencyTableViewCellProtocol {
     func addToFavouritesBtnTapped(isAdded: Bool, atIndex: Int) {
         if isAdded {
-            coreDataService.save(id: currenciesArray[atIndex].id, currency: currenciesArray[atIndex].name, symbol: currenciesArray[atIndex].symbol, priceUsd: currenciesArray[atIndex].price_usd, priceBtc: currenciesArray[atIndex].price_btc, completion: { (completion) in
-                if completion {
-                    self.favIds.append(currenciesArray[atIndex].id)
-                    self.showAlert(title: addedToFavouritesTitle, message: addedToFavouritesMessage)
-                }
+            coreDataService.saveAsFav(currency: savedResponse[atIndex], isFav: true, completion: { (completion) in
+                self.showAlert(title: addedToFavouritesTitle, message: addedToFavouritesMessage)
             })
         } else {
-            coreDataService.deleteDataWihtId(withId: currenciesArray[atIndex].id)
-            if let index = favIds.index(of: currenciesArray[atIndex].id) {
-                favIds.remove(at: index)
-            }
-            self.showAlert(title: removedFromFavouritesTitle, message: removedFromFavouritesMessage)
+            coreDataService.saveAsFav(currency: savedResponse[atIndex], isFav: false, completion: { (completion) in
+                self.showAlert(title: removedFromFavouritesTitle, message: removedFromFavouritesMessage)
+            })
         }
-        
-        UserDefaults.standard.set(favIds, forKey: "favIds")
     }
 }

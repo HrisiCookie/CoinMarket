@@ -15,7 +15,7 @@ class FavouritesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     var favourites: [FavouriteCurrency] = []
-    var currentFav: FavouriteCurrency?
+//    var currentFav: FavouriteCurrency?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +58,12 @@ class FavouritesViewController: UIViewController {
         // fetch items that are in this entity
         let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
         do {
-            favourites = try managedContext.fetch(fetchRequest)
-            print("Fav: \(favourites)")
-            print("Successfully fatched data!")
+            fetchRequest.predicate = NSPredicate(format: "isAddedToFavourites == true")
+//            favourites = try managedContext.fetch(fetchRequest)
+//            print("Fav: \(favourites)")
+//            print("Successfully fatched data!")
+            let result = try? managedContext.fetch(fetchRequest)
+            favourites = result!
             completion(true)
         } catch {
             print("Could not fetch: \(error.localizedDescription)")
@@ -84,7 +87,7 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let symbol = favourites[indexPath.row].symbol,
             let name = favourites[indexPath.row].currency {
-            currentFav = favourites[indexPath.row]
+//            currentFav = favourites[indexPath.row]
             let result = favourites[indexPath.row].result
             favouritesCell.populate(symbol: symbol, name: name, result: result)
         }

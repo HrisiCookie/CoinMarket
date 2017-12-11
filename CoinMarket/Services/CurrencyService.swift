@@ -39,7 +39,7 @@ extension CurrencyService: HttpRequesterDelegate {
             } else {
                 resultsArray.append(contentsOf: response)
             }
-
+            
             currencyServiceDelegate?.didRegisterSuccess()
             print("Response!!!: \(response)")
         } catch {
@@ -51,6 +51,4 @@ extension CurrencyService: HttpRequesterDelegate {
     func didGetFailed(with error: String) {
         currencyServiceDelegate?.didRegisterFailure(withError: error)
     }
-    
-    
 }
