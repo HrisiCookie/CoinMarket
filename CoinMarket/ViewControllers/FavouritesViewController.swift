@@ -37,6 +37,7 @@ class FavouritesViewController: UIViewController {
         
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView()
         
         self.tableView.register(UINib(nibName:"\(FavouritesTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(FavouritesTableViewCell.self)")
     }

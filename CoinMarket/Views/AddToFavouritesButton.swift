@@ -18,9 +18,9 @@ class AddToFavouritesButton: UIButton {
     var isChecked: Bool = false {
         didSet{
             if isChecked == true {
-                self.setImage(checkedImage, for: UIControlState.normal)
+                self.setBackgroundImage(checkedImage, for: .normal)
             } else {
-                self.setImage(uncheckedImage, for: UIControlState.normal)
+                self.setBackgroundImage(uncheckedImage, for: .normal)
             }
         }
     }

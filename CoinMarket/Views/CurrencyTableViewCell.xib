@@ -37,7 +37,7 @@
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juc-1F-JK4" customClass="AddToFavouritesButton" customModule="CoinMarket" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juc-1F-JK4" customClass="AddToFavouritesButton" customModule="CoinMarket" customModuleProvider="target">
                         <rect key="frame" x="282" y="24" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="7u3-5m-KUH"/>

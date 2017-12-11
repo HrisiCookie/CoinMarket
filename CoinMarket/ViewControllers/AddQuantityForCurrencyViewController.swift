@@ -14,6 +14,7 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
     @IBOutlet private weak var quantityForUSD: UITextField!
     @IBOutlet private weak var momentPriceForUSD: UILabel!
     @IBOutlet private weak var resultForUSD: UILabel!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     var selectedCurrency: FavouriteCurrency?
     var result: Double = 0
@@ -34,6 +35,9 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
         quantityForUSD.delegate = self
         self.hideKeyboardWhenTapped()
         
+        cancelBtn.layer.borderWidth = 2
+        cancelBtn.layer.borderColor = #colorLiteral(red: 0.566865624, green: 0.7903254693, blue: 1, alpha: 1)
+        navigationController?.navigationBar.tintColor = .white
         momentPriceForUSD.text = selectedCurrency?.priceUsd
         resultForUSD.text = "\(calculatedResult)"
     }

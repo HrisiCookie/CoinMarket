@@ -13,7 +13,6 @@ class FavouritesTableViewCell: UITableViewCell {
     @IBOutlet private weak var symbolLabel: UILabel!
     @IBOutlet private weak var currencyNameLabel: UILabel!
     @IBOutlet weak var currencyInUSD: UILabel!
-    @IBOutlet weak var currencyInBTC: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
