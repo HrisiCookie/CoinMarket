@@ -6,6 +6,5 @@ target 'CoinMarket' do
   use_frameworks!
 
   # Pods for CoinMarket
-	pod 'Presentr'
 
 end

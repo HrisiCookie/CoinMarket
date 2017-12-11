@@ -18,3 +18,6 @@ let addedToFavouritesTitle = "Saved!"
 let addedToFavouritesMessage = "This currency is added to Favourites."
 let removedFromFavouritesTitle = "Removed!"
 let removedFromFavouritesMessage = "This currency is removed from Favourites."
+
+// UserDefaults keys
+let isDataLoadedKey = "isDataLoaded"

@@ -16,7 +16,7 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
     @IBOutlet private weak var resultForUSD: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     
-    var selectedCurrency: FavouriteCurrency?
+    var selectedCurrency: Currency?
     var result: Double = 0
     private let coreDataService: CoreDataService = CoreDataService()
     
@@ -35,6 +35,11 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
         quantityForUSD.delegate = self
         self.hideKeyboardWhenTapped()
         
+        setupUI()
+    }
+    
+    // private methods
+    private func setupUI() {
         cancelBtn.layer.borderWidth = 2
         cancelBtn.layer.borderColor = #colorLiteral(red: 0.566865624, green: 0.7903254693, blue: 1, alpha: 1)
         navigationController?.navigationBar.tintColor = .white
@@ -42,7 +47,6 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
         resultForUSD.text = "\(calculatedResult)"
     }
     
-    // private methods
     private func calculateResult() {
         if let quantity = quantityForUSD.text,
             let price = momentPriceForUSD.text,
@@ -60,7 +64,7 @@ class AddQuantityForCurrencyViewController: UIViewController, UITextFieldDelegat
     
     @IBAction func didPressSubmitBtn(_ sender: Any) {
         guard let currency = selectedCurrency else {return}
-        coreDataService.saveChanges(currency: currency, result: calculatedResult) { (completed) in
+        coreDataService.saveResult(currency: currency, result: calculatedResult) { (completed) in
             if completed {
                 navigationController?.popViewController(animated: true)
             }

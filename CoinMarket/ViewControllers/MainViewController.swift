@@ -19,7 +19,8 @@ class MainViewController: UIViewController {
     var currencyService: CurrencyService = CurrencyService()
     var currenciesArray: [CurrencyModel] = []
     var coreDataService: CoreDataService = CoreDataService()
-    var savedResponse: [FavouriteCurrency] = []
+    var savedResponse: [Currency] = []
+    let defaults: UserDefaults = UserDefaults.standard
     var isDataLoaded: Bool = false
     
     override func viewDidLoad() {
@@ -28,44 +29,15 @@ class MainViewController: UIViewController {
         configTableView()
         currencyService.currencyServiceDelegate = self
         
-        isDataLoaded = UserDefaults.standard.bool(forKey: "isDataLoaded")
+        isDataLoaded = defaults.bool(forKey: isDataLoadedKey)
         
         if !isDataLoaded {
             requestCurrencies()
             isDataLoaded = true
-            UserDefaults.standard.set(isDataLoaded, forKey: "isDataLoaded")
+            defaults.set(isDataLoaded, forKey: isDataLoadedKey)
         }
         
-        fetchCoreDataObjects()
-    }
-    
-    private func fetchCoreDataObjects() {
-        self.fetch { (complete) in
-            if complete {
-                tableView.isHidden = savedResponse.count < 1 ? true : false
-            }
-        }
-    }
-    
-    func fetch(completion: (_ complete: Bool) -> ()) {
-        // fetch request - grab data from persistant storage
-        
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
-        
-        // fetch items that are in this entity
-        let fetchRequest = NSFetchRequest<FavouriteCurrency>(entityName: "FavouriteCurrency")
-        do {
-            savedResponse = try managedContext.fetch(fetchRequest)
-            print("Successfully fatched data!")
-            completion(true)
-        } catch {
-            print("Could not fetch: \(error.localizedDescription)")
-            completion(false)
-        }
-    }
-    
-    func requestCurrencies() {
-        currencyService.requestCurrencies()
+        self.fetch { (_) in }
     }
     
     // private methods
@@ -78,6 +50,27 @@ class MainViewController: UIViewController {
         tableView.tableFooterView = UIView()
     
         self.tableView.register(UINib(nibName:"\(CurrencyTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(CurrencyTableViewCell.self)")
+    }
+    
+    private func requestCurrencies() {
+        currencyService.requestCurrencies()
+    }
+    
+    private func fetch(completion: (_ complete: Bool) -> ()) {
+        // fetch request - grab data from persistant storage
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        // fetch items that are in this entity
+        let fetchRequest = NSFetchRequest<Currency>(entityName: "Currency")
+        do {
+            savedResponse = try managedContext.fetch(fetchRequest)
+            print("Successfully fatched data!")
+            completion(true)
+        } catch {
+            print("Could not fetch: \(error.localizedDescription)")
+            completion(false)
+        }
     }
 }
 
@@ -118,7 +111,7 @@ extension MainViewController: CurrencyServiceDelegate {
                 })
             }
             
-            self.fetchCoreDataObjects()
+            self.fetch { (_) in }
             self.tableView.reloadData()
         }
     }
